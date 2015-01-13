@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+	<head>
+		<title>SpreadSHeet ELement</title>
+		<style>
+			html, body {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			#background_info {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 550px;
+				height: 100%;
+				border: 1px solid black;
+				overflow: hidden;
+			}
+			#background_info > div {
+				width: 100%;
+				height: 100%;
+				word-wrap: break-word;
+				overflow-x: hidden;
+				overflow-y: scroll;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="background_info">
+			<div>
+			<h2> Spreadsheet Website </h2>
+			<h3> Background & Usage</h3>
+			<p>
+			This is an experiment of mine, inspired by the article <a href="https://coderwall.com/p/duapqq/use-a-google-spreadsheet-as-your-json-backend">Use a Google Spreadsheet as your JSON backend</a>.
+			</p>
+			<p>
+			If you do not see a button that says "Start application," then you are on an incompatible browser and/or have js disabled, and this will not work for you. Please try a compatible browser (or one with js enabled).
+			</p>
+			<p>
+			When you click "Start application," you will be asked for two things:
+			</p>
+			<ul>
+				<li>Do you want to autostart the application on your next visit?</li>
+				<li>What is your Google Spreadsheet backend key?</li>
+			</ul>
+			<p>
+			Both of these choices will be saved to the localStorage of the browser on your device, and will not be asked again.
+			</p>
+			<p>
+			note: currently, there is no user-friendly way to reset these values once they're set, so make sure you enter the right ones!
+			</p>
+			<h3> Format of Google Spreadsheet </h3>
+			<p>
+			The google spreadsheet must be publically accessible, as per the instructions in the article referenced in the previous section.
+			</p>
+			<p>
+			The format of the spreadsheet is the following:
+			</p>
+			<table>
+				<tr>
+					<th>
+					local_name
+					</th>
+					<th>
+					parent
+					</th>
+					<th>
+					type
+					</th>
+					<th>
+					id
+					</th>
+					<th>
+					classes
+					</th>
+					<th>
+					innerHTML
+					</th>
+				</tr>
+				<tr>
+					<td>
+					container
+					</td>
+					<td></td>
+					<td>
+					div
+					</td>
+					<td>
+					container
+					</td>
+					<td>
+					these are class names
+					</td>
+					<td>
+					This is the contents of an element
+					</td>
+				</tr>
+				<tr>
+					<td>
+					another_el
+					</td>
+					<td>
+					container
+					</td>
+					<td>
+					div
+					</td>
+					<td></td>
+					<td></td>
+					<td>
+					This is a child element of the previous one
+					</td>
+				</tr>
+			</table>
+			<p>
+				This page will grab the sheet in the format specified from a user-specified gs key. Then it will parse the spreadsheet contents for the cel definitions, create the html elements, and append them to the document.
+			</p>
+			<h3>Ok, so a quick lowdown:</h3>
+			<ul>
+				<li>SpreadSHeet ELement</li>
+				<li>Will make an ajax call to a google spreadsheet</li>
+				<li>The sheet will contain json objects for a Cel</li>
+				<li>A cel is created using the cel.js library</li>
+				<li>The cel.js library enables strictly defining each element in a page, from its attributes, to its style, to its behaviour, all together, all while still enforcing modularity</li>
+			</ul>
+			</div>
+		</div>
+		<script src="cel.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
