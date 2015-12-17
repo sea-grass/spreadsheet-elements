@@ -2,29 +2,6 @@
 <html>
 	<head>
 		<title>SpreadSHeet ELement</title>
-		<style>
-			html, body {
-				width: 100%;
-				height: 100%;
-				overflow: hidden;
-			}
-			#background_info {
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 550px;
-				height: 100%;
-				border: 1px solid black;
-				overflow: hidden;
-			}
-			#background_info > div {
-				width: 100%;
-				height: 100%;
-				word-wrap: break-word;
-				overflow-x: hidden;
-				overflow-y: scroll;
-			}
-		</style>
 	</head>
 	<body>
 		<div id="background_info">
@@ -48,7 +25,7 @@
 			Both of these choices will be saved to the localStorage of the browser on your device, and will not be asked again.
 			</p>
 			<p>
-			note: currently, there is no user-friendly way to reset these values once they're set, so make sure you enter the right ones!
+			You can reset these values with the button prominently displayed
 			</p>
 			<h3> Format of Google Spreadsheet </h3>
 			<p>
@@ -114,19 +91,19 @@
 				</tr>
 			</table>
 			<p>
-				This page will grab the sheet in the format specified from a user-specified gs key. Then it will parse the spreadsheet contents for the cel definitions, create the html elements, and append them to the document.
+				This page will grab the sheet in the format specified from a user-specified gs key. Then it will parse the spreadsheet contents for the Cel definitions, create the html elements, and append them to the document.
 			</p>
 			<h3>Ok, so a quick lowdown:</h3>
 			<ul>
 				<li>SpreadSHeet ELement</li>
 				<li>Will make an ajax call to a google spreadsheet</li>
 				<li>The sheet will contain json objects for a Cel</li>
-				<li>A cel is created using the cel.js library</li>
-				<li>The cel.js library enables strictly defining each element in a page, from its attributes, to its style, to its behaviour, all together, all while still enforcing modularity</li>
+				<li>A Cel is created using the Cel.js library</li>
+				<li>The Cel.js library enables strictly defining each element in a page, from its attributes, to its style, to its behaviour, all together, all while still enforcing modularity</li>
 			</ul>
 			</div>
 		</div>
-		<script src="cel.js"></script>
-		<script src="app.js"></script>
+		<script src="./Cel.js"></script>
+		<script src="./app.js"></script>
 	</body>
 </html>
