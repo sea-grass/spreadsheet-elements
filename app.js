@@ -194,6 +194,10 @@
         currCel = cels[localname];
         currEl = new Cel(currCel.celOptions);
         console.log(localname, currCel, currEl);
+        /*Dynamically added scripts must have their content set to their text attribute*/
+        if (currCel.celOptions['type'] === 'script') {
+          currEl.text = currCel.celOptions['innerHTML'];
+        }
         /* If a parent has been specified, then append the element to the parent instead */
         if (currCel.parent) {
           parentId = cels[currCel.parent].celOptions.id;
